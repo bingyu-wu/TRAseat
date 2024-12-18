@@ -55,6 +55,116 @@ document.getElementById("languageSelect").addEventListener("change", (e) => {
     changeLanguage(e.target.value);
 });
 
+//Taroko
+function taroko(carNumber, seatNumber) {
+    let total_line;
+    if (carNumber == 1 || carNumber == 8) {
+      total_line = 10;
+    } else if (
+      carNumber == 2 ||
+      carNumber == 4 ||
+      carNumber == 5 ||
+      carNumber == 7
+    ) {
+      total_line = 13;
+    } else if (carNumber == 3 || carNumber == 6) {
+      total_line = 12;
+    }
+    let location;
+    for (let line = 1; line <= total_line; line++) {
+      if (4 * line - 3 == seatNumber) {
+        location = 1;
+        break;
+      } else if (4 * line - 1 == seatNumber) {
+        location = 2;
+        break;
+      } else if (4 * line == seatNumber) {
+        location = 3;
+        break;
+      } else if (4 * line - 2 == seatNumber) {
+        location = 4;
+        break;
+      }
+    }
+    if (carNumber == 1 || carNumber == 2 || carNumber == 3 || carNumber == 4) {
+      location = 5 - location;
+    }
+    if (location == 1) {
+      alert("海側 窗");
+    } else if (location == 2) {
+      alert("海側 走道");
+    } else if (location == 3) {
+      alert("山側 走道");
+    } else if (location == 4) {
+      alert("山側 窗");
+    } else {
+      alert("座位資訊輸入錯誤");
+    }
+  }
+  
+  //Puyuma
+  function puyuma(carNumber, seatNumber) {
+    let total_line;
+    if (carNumber == 1 || carNumber == 8) {
+      total_line = 9;
+    } else if (
+      carNumber == 2 ||
+      carNumber == 4 ||
+      carNumber == 5 ||
+      carNumber == 7
+    ) {
+      total_line = 13;
+    } else if (carNumber == 3 || carNumber == 6) {
+      total_line = 12;
+    }
+    let location;
+    for (let line = 1; line <= total_line; line++) {
+      if (4 * line - 3 == seatNumber) {
+        location = 1;
+        break;
+      } else if (4 * line - 1 == seatNumber) {
+        location = 2;
+        break;
+      } else if (4 * line == seatNumber) {
+        location = 3;
+        break;
+      } else if (4 * line - 2 == seatNumber) {
+        location = 4;
+        break;
+      }
+    }
+    if (carNumber == 1 || carNumber == 2 || carNumber == 3 || carNumber == 4) {
+      location = 5 - location;
+    }
+    if (location == 1) {
+      alert("海側 窗");
+    } else if (location == 2) {
+      alert("海側 走道");
+    } else if (location == 3) {
+      alert("山側 走道");
+    } else if (location == 4) {
+      alert("山側 窗");
+    } else {
+      alert("座位資訊輸入錯誤");
+    }
+  }
+  
+  //EMU3000
+  function newEMU(carNumber, seat) {}
+  
+  document.getElementById("submitBtn").onclick = function () {
+    var trainType = document.getElementById("trainType").value;
+    var carNumber = document.getElementById("carNumber").value;
+    var seatNumber = document.getElementById("seatNumber").value;
+    if (trainType == "taroko") {
+      taroko(carNumber, seatNumber);
+    } else if (trainType == "puyuma") {
+      puyuma(carNumber, seatNumber);
+    } else {
+      alert("所選車型尚無資料");
+    }
+  };
+
 // 驗證邏輯
 /*function validateCarNumber() {
     const carNumber = document.getElementById('carNumber').value.trim();
