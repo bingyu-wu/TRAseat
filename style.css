@@ -1,6 +1,80 @@
-body {
-    font-family: Arial, sans-serif;
+/* 鐵路主題 */
+body.rail-theme {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f8f9fa;
+    background-image: url('https://cdn.pixabay.com/photo/2015/03/27/15/21/train-694469_1280.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #343a40;
 }
-h1 {
-    font-size: 2rem;
+
+.rail-title {
+    font-size: 2.5rem;
+    color: #2d3436;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.rail-subtitle {
+    font-size: 1.2rem;
+    color: #636e72;
+    margin-top: -10px;
+}
+
+.rail-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.rail-btn {
+    font-size: 1.2rem;
+    background-color: #2d3436;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.rail-btn:hover {
+    background-color: #636e72;
+}
+
+.rail-result {
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    background-color: #dfe6e9;
+    border: 1px solid #b2bec3;
+    color: #2d3436;
+}
+
+/* 表單標籤風格 */
+label {
+    font-weight: bold;
+    color: #2d3436;
+}
+
+/* 錯誤提示 */
+.text-danger {
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* 適配小屏設備 */
+@media (max-width: 768px) {
+    .rail-title {
+        font-size: 2rem;
+    }
+
+    .rail-subtitle {
+        font-size: 1rem;
+    }
+
+    .rail-btn {
+        font-size: 1rem;
+    }
+
+    .rail-result {
+        font-size: 1rem;
+    }
 }
