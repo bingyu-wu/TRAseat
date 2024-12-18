@@ -1,7 +1,8 @@
 // 語言資料
 const translations = {
     zh: {
-        title: "🚆 鐵路座位判斷系統 🚆",
+        head: "臺鐵對號列車座位查詢",
+        title: "🚆 臺鐵對號列車座位查詢 🚆",
         subtitle: "快速查詢您的座位屬性，享受舒適的鐵路旅程！",
         languageLabel: "語言：",
         trainTypeLabel: "車型：",
@@ -15,6 +16,7 @@ const translations = {
         seatNumberError: "座位號碼格式不正確，應為如 \"1A\" 或 \"10B\"。"
     },
     en: {
+        head: "Train Seat Checker",
         title: "🚆 Train Seat Checker 🚆",
         subtitle: "Quickly check your seat attributes and enjoy a comfortable railway journey!",
         languageLabel: "Language:",
@@ -36,6 +38,7 @@ let currentLang = "zh";
 // 更新語言內容
 function changeLanguage(lang) {
     currentLang = lang;
+    document.getElementById("head").textContent = translations[lang].head;
     document.getElementById("title").textContent = translations[lang].title;
     document.getElementById("subtitle").textContent = translations[lang].subtitle;
     document.getElementById("languageLabel").textContent = translations[lang].languageLabel;
