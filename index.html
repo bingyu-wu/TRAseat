@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Seat Checker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 id="title" class="text-center">火車座位判斷系統</h1>
+        
+        <!-- Language Selector -->
+        <div class="text-end mb-3">
+            <select id="languageSelect" class="form-select w-auto d-inline">
+                <option value="zh">中文</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+        
+        <!-- Form -->
+        <form id="seatForm">
+            <div class="mb-3">
+                <label for="trainType" id="trainTypeLabel">車型：</label>
+                <select id="trainType" class="form-select" required>
+                    <option value="highSpeed">高鐵</option>
+                    <option value="railway">台鐵</option>
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <label for="carNumber" id="carNumberLabel">車廂號碼：</label>
+                <input type="number" id="carNumber" class="form-control" placeholder="輸入車廂號碼" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="seatNumber" id="seatNumberLabel">座位號碼：</label>
+                <input type="text" id="seatNumber" class="form-control" placeholder="輸入座位號碼" required>
+            </div>
+            
+            <button type="button" id="submitBtn" class="btn btn-primary w-100">送出</button>
+        </form>
+        
+        <!-- Result -->
+        <div id="result" class="alert alert-info mt-4" style="display: none;"></div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
