@@ -53,7 +53,7 @@ document.getElementById("languageSelect").addEventListener("change", (e) => {
 });
 
 // 驗證邏輯
-function validateCarNumber() {
+/*function validateCarNumber() {
     const carNumber = document.getElementById('carNumber').value.trim();
     const carNumberError = document.getElementById('carNumberError');
     if (!/^\d+$/.test(carNumber) || carNumber < 1 || carNumber > 12) {
@@ -108,4 +108,4 @@ function validateAndSubmit() {
     const resultDiv = document.getElementById("result");
     resultDiv.style.display = "block";
     resultDiv.textContent = `${trainLabel}，${translations[currentLang].carNumberLabel} ${carNumber}，${translations[current}Lang].seatNumberLabel} ${seatNumber}，${seatType}。`;
-}
+}*/
