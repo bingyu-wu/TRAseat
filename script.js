@@ -100,15 +100,15 @@ function taroko(carNumber, seatNumber) {
         location = 5 - location;
     }
     if (location == 1) {
-        result.textContent = "🌊 海側靠窗 🪟";
+        alert("🌊 海側靠窗 🪟");
     } else if (location == 2) {
-        result.textContent = "🌊 海側靠走道 🚶";
+        alert("🌊 海側靠走道 🚶");
     } else if (location == 3) {
-        result.textContent = "⛰️ 山側靠走道 🚶";
+        alert("⛰️ 山側靠走道 🚶");
     } else if (location == 4) {
-        result.textContent = "⛰️ 山側靠窗 🪟";
+        alert("⛰️ 山側靠窗 🪟");
     } else {
-        result.textContent = "座位資訊輸入錯誤";
+        alert("座位資訊輸入錯誤");
     }
 }
 
@@ -147,15 +147,15 @@ function puyuma(carNumber, seatNumber) {
         location = 5 - location;
     }
     if (location == 1) {
-        resault.textContent = "🌊 海側靠窗 🪟";
+        alert("🌊 海側靠窗 🪟");
     } else if (location == 2) {
-        resault.textContent = "🌊 海側靠走道 🚶";
+        alert("🌊 海側靠走道 🚶");
     } else if (location == 3) {
-        resault.textContent = "⛰️ 山側靠走道 🚶";
+        alert("⛰️ 山側靠走道 🚶");
     } else if (location == 4) {
-        resault.textContent = "⛰️ 山側靠窗 🪟";
+        alert("⛰️ 山側靠窗 🪟");
     } else {
-        result.textContent = "座位資訊輸入錯誤";
+        alert("座位資訊輸入錯誤");
     }
 }
 
@@ -179,61 +179,3 @@ document.getElementById("submitBtn").onclick = function () {
         alert("所選車型尚無資料");
     }
 };
-
-// 驗證邏輯
-/*function validateCarNumber() {
-    const carNumber = document.getElementById('carNumber').value.trim();
-    const carNumberError = document.getElementById('carNumberError');
-    if (!/^\d+$/.test(carNumber) || carNumber < 1 || carNumber > 12) {
-        carNumberError.style.display = 'block';
-        return false;
-    }
-    carNumberError.style.display = 'none';
-    return true;
-}
-
-function validateSeatNumber() {
-    const seatNumber = document.getElementById('seatNumber').value.trim();
-    const seatNumberError = document.getElementById('seatNumberError');
-    if (!/^\d+[A-Fa-f]$/.test(seatNumber)) {
-        seatNumberError.style.display = 'block';
-        return false;
-    }
-    seatNumberError.style.display = 'none';
-    return true;
-}
-
-// 表單提交邏輯
-function validateAndSubmit() {
-    const isCarValid = validateCarNumber();
-    const isSeatValid = validateSeatNumber();
-    if (!isCarValid || !isSeatValid) return;
-
-    const trainType = document.getElementById("trainType").value;
-    const carNumber = parseInt(document.getElementById("carNumber").value);
-    const seatNumber = document.getElementById("seatNumber").value.trim();
-
-    let seatType = currentLang === "zh" ? "一般座位" : "Standard Seat";
-
-    if (trainType === "highSpeed") {
-        if (/A$|F$/i.test(seatNumber)) {
-            seatType = currentLang === "zh" ? "靠窗座位" : "Window Seat";
-        } else if (/C$|D$/i.test(seatNumber)) {
-            seatType = currentLang === "zh" ? "走道座位" : "Aisle Seat";
-        }
-    } else if (trainType === "railway") {
-        if (/1$|4$/.test(seatNumber)) {
-            seatType = currentLang === "zh" ? "靠窗座位" : "Window Seat";
-        } else if (/2$|3$/.test(seatNumber)) {
-            seatType = currentLang === "zh" ? "走道座位" : "Aisle Seat";
-        }
-    }
-
-    const trainLabel = trainType === "highSpeed"
-        ? translations[currentLang].resultHighSpeed
-        : translations[currentLang].resultRailway;
-
-    const resultDiv = document.getElementById("result");
-    resultDiv.style.display = "block";
-    resultDiv.textContent = `${trainLabel}，${translations[currentLang].carNumberLabel} ${carNumber}，${translations[current}Lang].seatNumberLabel} ${seatNumber}，${seatType}。`;
-}*/
