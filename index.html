@@ -43,25 +43,21 @@
                         <select id="trainType" class="form-select" required>
                             <option value="taroko">太魯閣</option>
                             <option value="puyuma">普悠瑪</option>
-                            <option value="emu3000">自強(3000)</option>
+                            <option value="newEMU">自強(3000)</option>
                         </select>
                     </div>
 
                     <div class="mb-3">
                         <label for="carNumber" id="carNumberLabel" class="form-label">車廂號碼：</label>
                         <input type="number" id="carNumber" class="form-control" placeholder="輸入車廂號碼" required>
-                        <div id="carNumberError" class="text-danger small" style="display: none;">車廂號碼必須是1到12之間的整數。
-                        </div>
                     </div>
 
                     <div class="mb-3">
                         <label for="seatNumber" id="seatNumberLabel" class="form-label">座位號碼：</label>
                         <input type="text" id="seatNumber" class="form-control" placeholder="輸入座位號碼" required>
-                        <div id="seatNumberError" class="text-danger small" style="display: none;">座位號碼格式不正確，應為如 "1A" 或
-                            "10B"。</div>
                     </div>
 
-                    <button type="button" id="submitBtn" class="btn btn-dark w-100 rail-btn">🚂 查詢座位屬性</button>
+                    <button type="button" id="submitBtn" class="btn btn-dark w-100 rail-btn">🚂 送出</button>
                 </div>
             </div>
         </form>
