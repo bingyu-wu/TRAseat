@@ -100,13 +100,13 @@ function taroko(carNumber, seatNumber) {
         location = 5 - location;
     }
     if (location == 1) {
-        alert("🌊 海側靠窗 🪟");
+        alert("海側靠窗");
     } else if (location == 2) {
-        alert("🌊 海側靠走道 🚶");
+        alert("海側靠走道");
     } else if (location == 3) {
-        alert("⛰️ 山側靠走道 🚶");
+        alert("山側靠走道");
     } else if (location == 4) {
-        alert("⛰️ 山側靠窗 🪟");
+        alert("山側靠窗");
     } else {
         alert("座位資訊輸入錯誤");
     }
