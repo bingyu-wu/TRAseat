@@ -167,8 +167,6 @@ document.getElementById("submitBtn").onclick = function () {
     var trainType = document.getElementById("trainType").value;
     var carNumber = document.getElementById("carNumber").value;
     var seatNumber = document.getElementById("seatNumber").value;
-    const result = document.getElementById("result");
-    result.style.display = "block";
     if (trainType == "taroko") {
         taroko(carNumber, seatNumber);
     } else if (trainType == "puyuma") {
