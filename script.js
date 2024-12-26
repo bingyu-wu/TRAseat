@@ -173,8 +173,9 @@ document.getElementById("submitBtn").onclick = function () {
         taroko(carNumber, seatNumber);
     } else if (trainType == "puyuma") {
         puyuma(carNumber, seatNumber);
-    } else if (trainType == "newEMU") {
-        newEMU(carNumber, seatNumber);
+    } 
+    //else if (trainType == "newEMU") {
+        //newEMU(carNumber, seatNumber);
     } else {
         alert("所選車型尚無資料");
     }
