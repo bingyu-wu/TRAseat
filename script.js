@@ -100,13 +100,13 @@ function taroko(carNumber, seatNumber) {
         location = 5 - location;
     }
     if (location == 1) {
-        alert("🌊 海側靠窗 🪟");
+        alert("海側靠窗");
     } else if (location == 2) {
-        alert("🌊 海側靠走道 🚶");
+        alert("海側靠走道");
     } else if (location == 3) {
-        alert("⛰️ 山側靠走道 🚶");
+        alert("山側靠走道");
     } else if (location == 4) {
-        alert("⛰️ 山側靠窗 🪟");
+        alert("山側靠窗");
     } else {
         alert("座位資訊輸入錯誤");
     }
@@ -241,8 +241,9 @@ document.getElementById("submitBtn").onclick = function () {
         taroko(carNumber, seatNumber);
     } else if (trainType == "puyuma") {
         puyuma(carNumber, seatNumber);
-    } else if (trainType == "newEMU") {
-        newEMU(carNumber, seatNumber);
+    } 
+    //else if (trainType == "newEMU") {
+        //newEMU(carNumber, seatNumber);
     } else {
         alert("所選車型尚無資料");
     }
