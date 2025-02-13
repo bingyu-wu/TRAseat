@@ -9,11 +9,6 @@ const translations = {
         carNumberLabel: "車廂號碼：",
         seatNumberLabel: "座位號碼：",
         submitBtn: "🚂 送出",
-        resultHighSpeed: "高鐵",
-        resultRailway: "台鐵",
-        resultError: "請輸入正確的車廂與座位資訊！",
-        carNumberError: "車廂號碼必須是1到12之間的整數。",
-        seatNumberError: '座位號碼格式不正確，應為如 "1A" 或 "10B"。',
     },
     en: {
         head: "Train Seat Checker",
@@ -25,12 +20,6 @@ const translations = {
         carNumberLabel: "Car Number:",
         seatNumberLabel: "Seat Number:",
         submitBtn: "🚂 Submit",
-        resultHighSpeed: "High Speed Rail",
-        resultRailway: "Taiwan Railway",
-        resultError: "Please enter valid car and seat information!",
-        carNumberError: "Car number must be an integer between 1 and 12.",
-        seatNumberError:
-            'Seat number format is invalid. Examples: "1A", "10B".',
     },
 };
 
@@ -100,13 +89,13 @@ function taroko(carNumber, seatNumber) {
         location = 5 - location;
     }
     if (location == 1) {
-        alert("海側靠窗");
+        alert("🌊 海側靠窗 🪟");
     } else if (location == 2) {
-        alert("海側靠走道");
+        alert("🌊 海側靠走道 🚶");
     } else if (location == 3) {
-        alert("山側靠走道");
+        alert("⛰️ 山側靠走道 🚶");
     } else if (location == 4) {
-        alert("山側靠窗");
+        alert("⛰️ 山側靠窗 🪟");
     } else {
         alert("座位資訊輸入錯誤");
     }
@@ -162,74 +151,88 @@ function puyuma(carNumber, seatNumber) {
 // EMU3000
 function newEMU(carNumber, seat) {
     let total_line;
-  if (carNumber == 1 || carNumber == 3 || carNumber == 6 || carNumber == 12) {
-    total_line = 10;
-  } else if (carNumber == 2 || carNumber == 4 || carNumber == 5 ||
-             carNumber == 8 || carNumber == 9 || carNumber == 10 ||
-             carNumber == 11) {
-    total_line = 13;
-  } else if (carNumber == 7) {
-    total_line = 7;
-  }
+    if (carNumber == 1 || carNumber == 3 || carNumber == 6 || carNumber == 12) {
+        total_line = 10;
+    } else if (
+        carNumber == 2 ||
+        carNumber == 4 ||
+        carNumber == 5 ||
+        carNumber == 8 ||
+        carNumber == 9 ||
+        carNumber == 10 ||
+        carNumber == 11
+    ) {
+        total_line = 13;
+    } else if (carNumber == 7) {
+        total_line = 7;
+    }
 
-  let location;
-  //VIP Car
-  if (carNumber == 6) {
-    for (let line = 1; line <= total_line; line++) {
-      if (4 * line - 3 == seat) {
-        location = 1;
-        break;
-      } else if (4 * line - 1 == seat) {
-        location = 2;
-        break;
-      } else if (4 * line == seat) {
-        location = 3;
-        break;
-      }
+    let location;
+    //VIP Car
+    if (carNumber == 6) {
+        for (let line = 1; line <= total_line; line++) {
+            if (4 * line - 3 == seat) {
+                location = 1;
+                break;
+            } else if (4 * line - 1 == seat) {
+                location = 2;
+                break;
+            } else if (4 * line == seat) {
+                location = 3;
+                break;
+            }
+        }
+        if (location == 3) {
+            alert("🌊 海側靠窗 🪟");
+        } else if (location == 2) {
+            alert("⛰️ 山側靠走道 🚶");
+        } else if (location == 1) {
+            alert("⛰️ 山側靠窗 🪟");
+        } else {
+            alert("座位資訊輸入錯誤");
+        }
     }
-    if (location == 3) {
-        alert("🌊 海側靠窗 🪟");
-    } else if (location == 2) {
-        alert("⛰️ 山側靠走道 🚶");
-    } else if (location == 1) {
-        alert("⛰️ 山側靠窗 🪟");
-    } else {
-        alert("座位資訊輸入錯誤");
+
+    //Normal Car
+    else {
+        for (let line = 1; line <= total_line; line++) {
+            if (4 * line - 3 == seat) {
+                location = 1;
+                break;
+            } else if (4 * line - 1 == seat) {
+                location = 2;
+                break;
+            } else if (4 * line == seat) {
+                location = 3;
+                break;
+            } else if (4 * line - 2 == seat) {
+                location = 4;
+                break;
+            }
+        }
+        if (
+            carNumber == 1 ||
+            carNumber == 2 ||
+            carNumber == 3 ||
+            carNumber == 4 ||
+            carNumber == 5 ||
+            carNumber == 7 ||
+            carNumber == 8
+        ) {
+            location = 5 - location;
+        }
+        if (location == 1) {
+            alert("🌊 海側靠窗 🪟");
+        } else if (location == 2) {
+            alert("🌊 海側靠走道 🚶");
+        } else if (location == 3) {
+            alert("⛰️ 山側靠走道 🚶");
+        } else if (location == 4) {
+            alert("⛰️ 山側靠窗 🪟");
+        } else {
+            (cout << "Wrong input information.") << endl;
+        }
     }
-  } 
-  
-  //Normal Car
-  else {
-    for (let line = 1; line <= total_line; line++) {
-      if (4 * line - 3 == seat) {
-        location = 1;
-        break;
-      } else if (4 * line - 1 == seat) {
-        location = 2;
-        break;
-      } else if (4 * line == seat) {
-        location = 3;
-        break;
-      } else if (4 * line - 2 == seat) {
-        location = 4;
-        break;
-      }
-    }
-    if (carNumber == 1 || carNumber == 2 || carNumber == 3 || carNumber == 4|| carNumber == 5|| carNumber == 7|| carNumber == 8) {
-      location = 5 - location;
-    }
-    if (location == 1) {
-        alert("🌊 海側靠窗 🪟");
-    } else if (location == 2) {
-        alert("🌊 海側靠走道 🚶");
-    } else if (location == 3) {
-        alert("⛰️ 山側靠走道 🚶");
-    } else if (location == 4) {
-        alert("⛰️ 山側靠窗 🪟");
-    } else {
-      cout << "Wrong input information." << endl;
-    }
-  }
 }
 
 // Main
@@ -241,9 +244,8 @@ document.getElementById("submitBtn").onclick = function () {
         taroko(carNumber, seatNumber);
     } else if (trainType == "puyuma") {
         puyuma(carNumber, seatNumber);
-    } 
-    //else if (trainType == "newEMU") {
-        //newEMU(carNumber, seatNumber);
+    } else if (trainType == "newEMU") {
+        newEMU(carNumber, seatNumber);
     } else {
         alert("所選車型尚無資料");
     }
